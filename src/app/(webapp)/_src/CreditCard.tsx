@@ -24,7 +24,7 @@ export const CreditCard = () => {
             src="https://raw.githubusercontent.com/muhammederdem/credit-card-form/master/src/assets/images/chip.png"
             className="card-item__chip"
             alt="credit card chip"
-          ></img>
+          />
           <img
             style={{
               position: 'absolute',
@@ -34,8 +34,8 @@ export const CreditCard = () => {
             }}
             src="https://www.tuya.com.co/sites/all/themes/tuya/assets/images/pre-home/logo_tuya.svg"
             className="card-item__chip"
-            alt="credit card chip"
-          ></img>
+            alt="credit card logo"
+          />
         </div>
         <div
           style={{
@@ -67,16 +67,6 @@ export const CreditCard = () => {
           >
             Card holder
           </label>
-          <label
-            style={{
-              position: 'absolute',
-              bottom: '60px',
-              right: '25px',
-              opacity: 0.5,
-            }}
-          >
-            Expires
-          </label>
         </div>
 
         <div>
@@ -89,19 +79,18 @@ export const CreditCard = () => {
               fontSize: '25px',
             }}
           >
-            Paul Doe
+            Yohana Jimenez
           </label>
-          <label
+          <img
             style={{
               position: 'absolute',
               bottom: '25px',
               right: '25px',
-              opacity: 1,
-              fontSize: '25px',
+              height: '50px',
             }}
-          >
-            1/24
-          </label>
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/309px-Mastercard-logo.svg.png"
+            alt="Mastercard logo"
+          />
         </div>
       </Card>
     </Box>
