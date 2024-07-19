@@ -5,7 +5,7 @@ import { Formulario } from './_src/Formulario'
 export default function Page() {
   return (
     <Shell>
-      <Container>
+      <Container mb={300}>
         <Formulario />
       </Container>
     </Shell>
