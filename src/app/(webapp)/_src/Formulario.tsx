@@ -80,7 +80,7 @@ export const Formulario: React.FC = () => {
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack>
           <Grid gutter={'xl'}>
-            <Grid.Col span={{ base: 12, md: 6 }}>
+            <Grid.Col order={{ base: 2, md: 1 }} span={{ base: 12, md: 6 }}>
               <Stack gap={'lg'}>
                 <NumberInput
                   size="xs"
@@ -121,7 +121,7 @@ export const Formulario: React.FC = () => {
                 </Button>
               </Stack>
             </Grid.Col>
-            <Grid.Col span={{ base: 12, md: 6 }}>
+            <Grid.Col order={{ base: 1, md: 2 }} span={{ base: 12, md: 6 }}>
               <CreditCard />
             </Grid.Col>
           </Grid>
