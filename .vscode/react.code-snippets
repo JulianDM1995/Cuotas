@@ -1,0 +1,99 @@
+{
+  "react_component": {
+    "prefix": "react_component",
+    "description": "React component",
+    "body": [
+      "${1:export} const ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}  = () => {",
+      "  return <div style={{ background: '#${RANDOM_HEX}33' }}>{'Component: ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} '}</div>",
+      "}",
+      ""
+    ]
+  },
+  "react_component_with_children ": {
+    "prefix": "react_component_with_children",
+    "description": "React component with children",
+    "body": [
+      "${1:export} const ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}  = ({ children }: { children: React.ReactNode }) => {",
+      "  return (",
+      "    <div style={{ background: '#${RANDOM_HEX}33' }}>",
+      "      {'Component: ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} '}",
+      "      <div style={{ background: '#${RANDOM_HEX}33' }}>{children}</div>",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ]
+  },
+  "react_component_with_1_prop ": {
+    "prefix": "react_component_with_1_prop",
+    "description": "React component with 1 prop",
+    "body": [
+      "",
+      "${1:export} const ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}  = ({ ${3} }: { ${3} : ${4} }) => {",
+      "  return (",
+      "    <div style={{ background: '#${RANDOM_HEX}33' }}>",
+      "      {'Component: ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} '}",
+      "      <div style={{ background: '#${RANDOM_HEX}33' }}>{\"${3}: \"}{${3}}</div>",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ]
+  },
+  "react_component_with_2_props ": {
+    "prefix": "react_component_with_2_props",
+    "description": "React component with 2 props",
+    "body": [
+      "",
+      "${1:export} const ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}  = ({ ${3}, ${5} }: { ${3} : ${4}, ${5}: ${6} }) => {",
+      "  return (",
+      "    <div style={{ background: '#${RANDOM_HEX}33' }}>",
+      "      {'Component: ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} '}",
+      "      <div style={{ background: '#${RANDOM_HEX}33' }}>{\"${3}: \"}{${3}}</div>",
+      "      <div style={{ background: '#${RANDOM_HEX}33' }}>{\"${5}: \"}{${5}}</div>",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ]
+  },
+  "react_component_with_3_props ": {
+    "prefix": "react_component_with_3_props",
+    "description": "React component with 3 props",
+    "body": [
+      "",
+      "${1:export} const ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}  = ({ ${3}, ${5}, ${7} }: { ${3} : ${4}, ${5} : ${6}, ${7} : ${8}}) => {",
+      "  return (",
+      "    <div style={{ background: '#${RANDOM_HEX}33' }}>",
+      "      {'Component: ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} '}",
+      "      <div style={{ background: '#${RANDOM_HEX}33' }}>{\"${3}: \"}{${3}}</div>",
+      "      <div style={{ background: '#${RANDOM_HEX}33' }}>{\"${5}: \"}{${5}}</div>",
+      "      <div style={{ background: '#${RANDOM_HEX}33' }}>{\"${7}: \"}{${7}}</div>",
+      "    </div>",
+      "  )",
+      "}",
+      ""
+    ]
+  },
+  "react_fetch ": {
+    "prefix": "react_fetch",
+    "description": "React fetch component",
+    "body": [
+      "  const [content, setContent] = useState<${1:T}>()",
+      "  useEffect(() => {",
+      "    const fetchContent = async () => {",
+      "      const content = await fetch(",
+      "        'https://jsonplaceholder.typicode.com/posts/1'",
+      "      )",
+      "      const content: ${1:T} = await content.json()",
+      "      setContent(content)",
+      "    }",
+      "    fetchContent()",
+      "  }, [])",
+      "",
+      "  if (!content) return <div style={{ background: '#${RANDOM_HEX}33' }}>{'Loading...'}</div>",
+      "  return <div style={{ background: '#${RANDOM_HEX}33' }}>{JSON.stringify(content)}</div>",
+      ""
+    ]
+  }
+}

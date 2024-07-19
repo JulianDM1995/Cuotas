@@ -1,0 +1,17 @@
+{
+  "mantine_grid ": {
+    "prefix": "mantine_grid",
+    "description": "This snippet was created for 'mantine_grid' using EZSnippet.io",
+    "body": [
+      "<Grid>",
+      "  <Grid.Col span={{ base: 12, md: 6 }}>{'A'}</Grid.Col>",
+      "  <Grid.Col span={{ base: 12, md: 6 }}>{'B'}</Grid.Col>",
+      "</Grid>"
+    ]
+  },
+  "mantine_responsive_test ": {
+    "prefix": "mantine_responsive_test",
+    "description": "This snippet was created for 'mantine_responsive_test' using EZSnippet.io",
+    "body": [" bg={{ base: 'red', sm: 'yellow', md: 'green', lg: 'blue' }}"]
+  }
+}

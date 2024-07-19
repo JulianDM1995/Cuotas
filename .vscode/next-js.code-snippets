@@ -1,0 +1,124 @@
+{
+  "next_js_route ": {
+    "prefix": "next_js_route",
+    "description": "NextJS Route",
+    "body": [
+      "export async function ${1|GET,POST,PUT,DELETE,PATCH|}() {",
+      "  try {",
+      "    return Response.json({",
+      "      verb: '${1|GET,POST,PUT,DELETE,PATCH|}',",
+      "      path: '${RELATIVE_FILEPATH}',",
+      "    })",
+      "  } catch (err) {",
+      "    return Response.json(",
+      "      { error: '${1|GET,POST,PUT,DELETE,PATCH|} error in ${RELATIVE_FILEPATH}', description: (err as Error).message },",
+      "      { status: 500 }",
+      "    )",
+      "  }",
+      "}"
+    ]
+  },
+  "next_js_route_with_route_id ": {
+    "prefix": "next_js_route_with_route_id",
+    "description": "NextJS Route with route id",
+    "body": [
+      "export async function ${1|GET,POST,PUT,DELETE,PATCH|}(_: Request, { params }: { params: { ${2}: string } }) {",
+      "  try {",
+      "    return Response.json({",
+      "      ${2}: params.${2},",
+      "      verb: '${1|GET,POST,PUT,DELETE,PATCH|}',",
+      "      path: '${RELATIVE_FILEPATH}',",
+      "    })",
+      "  } catch (err) {",
+      "    return Response.json(",
+      "      { error: '${1|GET,POST,PUT,DELETE,PATCH|} error in ${RELATIVE_FILEPATH}', description: (err as Error).message },",
+      "      { status: 500 }",
+      "    )",
+      "  }",
+      "}"
+    ]
+  },
+  "next_js_route_with_body_props ": {
+    "prefix": "next_js_route_with_body_props",
+    "description": "NextJS Route with body props",
+    "body": [
+      "type BodyProps = { ${2} }",
+      "export async function ${1|GET,POST,PUT,DELETE,PATCH|}(request: Request) {",
+      "  try {",
+      "    const bodyProps = (await request.json()) as BodyProps",
+      "    return Response.json({",
+      "      verb: '${1|GET,POST,PUT,DELETE,PATCH|}',",
+      "      path: '${RELATIVE_FILEPATH}',",
+      "      bodyProps,",
+      "    })",
+      "  } catch (err) {",
+      "    return Response.json(",
+      "      { error: '${1|GET,POST,PUT,DELETE,PATCH|} error in ${RELATIVE_FILEPATH}', description: (err as Error).message },",
+      "      { status: 500 }",
+      "    )",
+      "  }",
+      "}"
+    ]
+  },
+  "next_js_route_with_route_id_and_body_props ": {
+    "prefix": "next_js_route_with_route_id_and_body_props",
+    "description": "NextJS Route with route id and body props",
+    "body": [
+      "type BodyProps = { ${3} }",
+      "export async function ${1|GET,POST,PUT,DELETE,PATCH|}(request: Request, { params }: { params: { ${2}: string } }) {",
+      "  try {",
+      "    const bodyProps = (await request.json()) as BodyProps",
+      "    return Response.json({",
+      "      ${2}: params.${2},",
+      "      verb: '${1|GET,POST,PUT,DELETE,PATCH|}',",
+      "      path: '${RELATIVE_FILEPATH}',",
+      "      bodyProps,",
+      "    })",
+      "  } catch (err) {",
+      "    return Response.json(",
+      "      { error: '${1|GET,POST,PUT,DELETE,PATCH|} error in ${RELATIVE_FILEPATH}', description: (err as Error).message },",
+      "      { status: 500 }",
+      "    )",
+      "  }",
+      "}"
+    ]
+  },
+  "next_js_layout ": {
+    "prefix": "next_js_layout",
+    "description": "NextJS Layout",
+    "body": [
+      "import { Metadata } from 'next'",
+      "",
+      "export const metadata: Metadata = { title: ${1} }",
+      "",
+      "export default function RootLayout({",
+      "  children,",
+      "}: {",
+      "  children: React.ReactNode",
+      "}) {",
+      "  return <>{children}</>",
+      "}",
+      ""
+    ]
+  },
+  "next_js_page ": {
+    "prefix": "next_js_page",
+    "description": "NextJS Page",
+    "body": [
+      "export default function Page() {",
+      "  return <div>{'Page: ${1:${RELATIVE_FILEPATH}}'}</div>",
+      "}",
+      ""
+    ]
+  },
+  "next_js_page_with_route_id ": {
+    "prefix": "next_js_page_with_dynamic_route",
+    "description": "NextJS Page with dynamic route",
+    "body": [
+      "export default function Page({ params }: { params: { ${1}: string } }) {",
+      "  return <div>{`Page ${2:${RELATIVE_FILEPATH}} with dynamic route: ${params.${1}}`}</div>",
+      "}",
+      ""
+    ]
+  }
+}

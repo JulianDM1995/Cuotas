@@ -1,0 +1,13 @@
+{
+  // Snippet for misc_backtick
+  "misc_backtick_inside ": {
+    "prefix": "misc_backtick_inside",
+    "description": "",
+    "body": ["`${2} ${${1:${TM_SELECTED_TEXT}}}`"]
+  },
+  "misc_backtick_outside ": {
+    "prefix": "misc_backtick_outside",
+    "description": "",
+    "body": ["`${1:${TM_SELECTED_TEXT}} ${${2}}`"]
+  }
+}
